@@ -1,0 +1,48 @@
+/* Custom scrollbar matching the gold theme */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #b8860b;
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: #0d0d0d;
+        }
+
+        /* Dramatic shadow for gold text and elements */
+        .text-shadow-gold {
+            text-shadow: 0 0 10px rgba(184, 134, 11, 0.9), 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Hero Image with heavy dark overlay for high contrast */
+        .hero-bg {
+            /* NOTE: Replace placeholder image with a high-res, branded image */
+            background-image: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.7)),
+                                url('https://placehold.co/1920x1080/1a1a1a/b8860b?text=LUXURY+SALON+INTERIOR');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Shimmer effect for the luxury button */
+        .shimmer-button {
+            background: linear-gradient(90deg, #b8860b 0%, #ffd700 50%, #b8860b 100%);
+            background-size: 200% 100%;
+            transition: all 0.5s ease;
+        }
+        .shimmer-button:hover {
+             animation: shimmer 1s infinite linear;
+        }
+        
+        /* Initial state for scroll animation */
+        .animate-on-scroll {
+            transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Final state when element is visible */
+        .animate-on-scroll.active-scroll-animation {
+            opacity: 1;
+            transform: translateY(0);
+        }
