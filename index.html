@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbach Heir Saloon | The Art of Elevation & Executive Grooming</title>
+
+    <meta name="description" content="Limbach Heir Saloon: A luxury hair sanctuary offering precision cuts, master color, and executive grooming in Metropolis. Book your appointment now.">
+    <meta name="robots" content="index, follow"> 
+    <meta property="og:title" content="Limbach Heir Saloon | The Art of Elevation">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourlimbachsaloon.com/"> 
+    <meta property="og:image" content="https://www.yourlimbachsaloon.com/images/og-image.jpg"> 
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        // Custom Tailwind Configuration (Colors, Fonts, Animations)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0d0d0d', // Near Black
+                        'secondary-dark': '#1a1a1a', // Dark Gray for elements
+                        'accent-gold': '#b8860b', // Darker, Rich Gold (Goldenrod)
+                        'highlight-gold': '#ffd700', // Bright Gold for subtle highlights
+                        'off-white': '#f0f0f0',
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { 'background-position': '-200% 0' },
+                            '100%': { 'background-position': '200% 0' },
+                        },
+                    },
+                    animation: {
+                        shimmer: 'shimmer 4s infinite linear',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar matching the gold theme */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #b8860b;
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: #0d0d0d;
+        }
+
+        /* Dramatic shadow for gold text and elements */
+        .text-shadow-gold {
+            text-shadow: 0 0 10px rgba(184, 134, 11, 0.9), 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Hero Image with heavy dark overlay for high contrast */
+        .hero-bg {
+            /* NOTE: Replace placeholder image with a high-res, branded image */
+            background-image: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.7)),
+                                url('https://placehold.co/1920x1080/1a1a1a/b8860b?text=LUXURY+SALON+INTERIOR');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Shimmer effect for the luxury button */
+        .shimmer-button {
+            background: linear-gradient(90deg, #b8860b 0%, #ffd700 50%, #b8860b 100%);
+            background-size: 200% 100%;
+            transition: all 0.5s ease;
+        }
+        .shimmer-button:hover {
+             animation: shimmer 1s infinite linear;
+        }
+        
+        /* Initial state for scroll animation */
+        .animate-on-scroll {
+            transition: opacity 1000ms ease-out, transform 1000ms ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Final state when element is visible */
+        .animate-on-scroll.active-scroll-animation {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Limbach Heir Saloon",
+      "url": "https://www.yourlimbachsaloon.com/",
+      "telephone": "+15551234567",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "789 Grand Royal Blvd, Suite 101",
+        "addressLocality": "Metropolis",
+        "addressRegion": "CA",
+        "postalCode": "90210",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-primary-dark text-off-white font-sans antialiased">
+
+    <header class="sticky top-0 z-50 bg-primary-dark/95 backdrop-blur-sm shadow-xl shadow-accent-gold/20">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
+            <h1 class="text-xl sm:text-2xl lg:text-3xl font-heading font-extrabold text-accent-gold tracking-widest text-shadow-gold transition duration-500 hover:text-highlight-gold">LIMBACH HEIR SALOON</h1>
+
+            <div class="hidden lg:flex space-x-8">
+                <a href="#services" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider relative group" aria-label="Our Services">
+                    Services
+                    <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-highlight-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#gallery" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider relative group" aria-label="Our Work Gallery">
+                    Gallery
+                    <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-highlight-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#philosophy" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider relative group" aria-label="Our Saloon Philosophy">
+                    Philosophy
+                    <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-highlight-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#booking" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider relative group" aria-label="Book an Appointment">
+                    Contact
+                    <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-highlight-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <a href="#booking" class="shimmer-button text-primary-dark px-4 py-2 sm:px-6 sm:py-2 rounded-full font-bold uppercase text-sm sm:text-base hover:shadow-lg transition duration-300 transform hover:scale-105" aria-label="Book Now">
+                Book Now
+            </a>
+
+            <button id="mobile-menu-button" class="lg:hidden p-2 ml-4 text-accent-gold hover:text-highlight-gold transition duration-300" aria-label="Toggle Menu">
+                <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-primary-dark/95 backdrop-blur-sm py-4 border-t border-accent-gold/50">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#services" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider text-lg w-full text-center py-2" aria-label="Our Services">Services</a>
+                <a href="#gallery" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider text-lg w-full text-center py-2" aria-label="Our Work Gallery">Gallery</a>
+                <a href="#philosophy" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider text-lg w-full text-center py-2" aria-label="Our Saloon Philosophy">Philosophy</a>
+                <a href="#booking" class="text-off-white hover:text-highlight-gold transition duration-300 font-semibold tracking-wider text-lg w-full text-center py-2" aria-label="Book an Appointment">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-bg min-h-[90vh] flex items-center justify-center text-center px-4">
+            <div class="max-w-4xl pt-20">
+                <p class="text-xl sm:text-2xl text-highlight-gold font-heading mb-4 animate-pulse">EST. 2024</p>
+                <h2 class="text-5xl sm:text-7xl lg:text-8xl font-heading font-black mb-6 uppercase leading-tight text-off-white text-shadow-gold">
+                    Where Style Is Inherited
+                </h2>
+                <p class="text-lg sm:text-xl lg:text-2xl text-off-white/80 mb-10 max-w-2xl mx-auto">
+                    A luxurious sanctuary dedicated to precision cuts, transformative color, and the art of personalized grooming.
+                </p>
+                <a href="#services" class="shimmer-button text-primary-dark text-lg sm:text-xl px-10 sm:px-12 py-3 sm:py-4 rounded-xl font-bold uppercase tracking-widest shadow-2xl transition duration-500 transform hover:scale-[1.03]" aria-label="Explore Our Craft">
+                    Explore Our Craft
+                </a>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 md:py-32 container mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+            <h3 class="text-4xl md:text-6xl font-heading font-bold text-center mb-6 text-accent-gold">Precision Services</h3>
+            <p class="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">Our menu is curated for the discerning client, covering everything from classic barbering to avant-garde color work.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-secondary-dark p-8 rounded-2xl border-t-4 border-accent-gold shadow-2xl hover:shadow-highlight-gold/30 transition duration-500 transform hover:scale-[1.02]">
+                    <div class="text-highlight-gold mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-3xl font-heading font-bold mb-3 text-off-white">The Heir Cut</h4>
+                    <p class="text-gray-400 mb-6">A meticulous, custom-tailored cut and style, finishing with a complimentary shoulder massage and product consultation.</p>
+                    <p class="text-2xl font-bold text-accent-gold border-t border-gray-700 pt-4">Starting from $75</p>
+                </div>
+
+                <div class="bg-secondary-dark p-8 rounded-2xl border-t-4 border-accent-gold shadow-2xl hover:shadow-highlight-gold/30 transition duration-500 transform hover:scale-[1.02]">
+                    <div class="text-highlight-gold mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.292c.323-.979 1.637-.979 1.96 0l2.302 6.906c.162.487.595.828 1.096.828h7.245c1.077 0 1.542 1.346.689 1.983l-5.88 4.298c-.417.306-.607.854-.42 1.378l2.25 6.751c.323.979-.768 1.666-1.554 1.107L12 18.736l-6.191 4.545c-.786.559-1.877-.128-1.554-1.107l2.25-6.751c.187-.524-.004-1.072-.42-1.378l-5.88-4.298c-.853-.637-.388-1.983.689-1.983h7.245c.501 0 .934-.341 1.096-.828l2.302-6.906z"></path></svg>
+                    </div>
+                    <h4 class="text-3xl font-heading font-bold mb-3 text-off-white">Color Alchemy</h4>
+                    <p class="text-gray-400 mb-6">Master balayage, dimensional foil work, and corrective color, including premium bond-building treatments.</p>
+                    <p class="text-2xl font-bold text-accent-gold border-t border-gray-700 pt-4">Consultation Required</p>
+                </div>
+
+                <div class="bg-secondary-dark p-8 rounded-2xl border-t-4 border-accent-gold shadow-2xl hover:shadow-highlight-gold/30 transition duration-500 transform hover:scale-[1.02] md:col-span-2 lg:col-span-1">
+                    <div class="text-highlight-gold mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="text-3xl font-heading font-bold mb-3 text-off-white">Ultimate Grooming</h4>
+                    <p class="text-gray-400 mb-6">Hot razor shaves, specialized texture services (perms/straightening), and luxury deep conditioning treatments.</p>
+                    <p class="text-2xl font-bold text-accent-gold border-t border-gray-700 pt-4">Book a Bundle</p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="border-t border-accent-gold/50">
+
+        <section id="philosophy" class="py-20 bg-secondary-dark border-y border-accent-gold/50 animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                    <h3 class="text-4xl md:text-6xl font-heading font-bold text-center mb-6 text-accent-gold">Our Philosophy</h3>
+                    <p class="text-center text-gray-400 text-lg mb-12 max-w-4xl mx-auto">We don't just cut hair; we sculpt identities. Every appointment is a dedicated session with a Master Stylist committed to elevating your personal brand.</p>
+
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2 p-4">
+                        <img src="https://placehold.co/800x600/1a1a1a/ffd700?text=MASTER+STYLIST+AT+WORK" alt="Stylist working in a luxurious environment" class="rounded-xl shadow-2xl border-2 border-accent-gold/50 transition duration-500 hover:shadow-highlight-gold/50">
+                    </div>
+                    <div class="md:w-1/2 space-y-6 p-4">
+                        <div class="flex items-start">
+                            <span class="text-highlight-gold text-2xl mr-4 flex-shrink-0" aria-hidden="true">&#9733;</span>
+                            <div>
+                                <h4 class="text-2xl font-semibold font-heading text-off-white">Dedicated Consultation</h4>
+                                <p class="text-gray-400">Before a single snip, we conduct an in-depth analysis of your hair health, face shape, and lifestyle goals.</p>
+                            </div>
+                        </div>
+                       <div class="flex items-start">
+                            <span class="text-highlight-gold text-2xl mr-4 flex-shrink-0" aria-hidden="true">&#9733;</span>
+                            <div>
+                                <h4 class="text-2xl font-semibold font-heading text-off-white">Uncompromising Quality</h4>
+                                <p class="text-gray-400">We use only the finest, sustainable products and techniques honed through international training.</p>
+                            </div>
+                        </div>
+                       <div class="flex items-start">
+                            <span class="text-highlight-gold text-2xl mr-4 flex-shrink-0" aria-hidden="true">&#9733;</span>
+                            <div>
+                                <h4 class="text-2xl font-semibold font-heading text-off-white">Architectural Design</h4>
+                                <p class="text-gray-400">Our styling is rooted in classical design principles, ensuring your cut holds its shape and grows out beautifully.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-accent-gold/50">
+
+        <section id="testimonials" class="py-20 bg-primary-dark border-b border-accent-gold/50 animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-6xl">
+                <h3 class="text-4xl md:text-5xl font-heading font-bold text-accent-gold mb-12">Client Acclaim</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="p-8 bg-secondary-dark rounded-xl shadow-2xl border-t-2 border-highlight-gold/50 transition duration-300 hover:shadow-highlight-gold/30 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/4 h-1 bg-highlight-gold/50 rounded-b-lg"></div>
+                        <p class="text-5xl text-highlight-gold mb-4 font-heading leading-none" aria-hidden="true">“</p>
+                        <p class="text-gray-300 italic mb-4">"The attention to detail here is unparalleled. A true master of their craft. I won't go anywhere else for my executive shave."</p>
+                        <p class="font-semibold text-off-white">— Alexander M., Executive Client</p>
+                    </div>
+
+                    <div class="p-8 bg-secondary-dark rounded-xl shadow-2xl border-t-2 border-highlight-gold/50 transition duration-300 hover:shadow-highlight-gold/30 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/4 h-1 bg-highlight-gold/50 rounded-b-lg"></div>
+                        <p class="text-5xl text-highlight-gold mb-4 font-heading leading-none" aria-hidden="true">“</p>
+                        <p class="text-gray-300 italic mb-4">"My balayage color is flawless. It grows out naturally and the health of my hair has never been better. Truly worth the investment."</p>
+                        <p class="font-semibold text-off-white">— Sarah P., Color Alchemy Client</p>
+                    </div>
+                    
+                    <div class="p-8 bg-secondary-dark rounded-xl shadow-2xl border-t-2 border-highlight-gold/50 transition duration-300 hover:shadow-highlight-gold/30 sm:col-span-2 lg:col-span-1 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/4 h-1 bg-highlight-gold/50 rounded-b-lg"></div>
+                        <p class="text-5xl text-highlight-gold mb-4 font-heading leading-none" aria-hidden="true">“</p>
+                        <p class="text-gray-300 italic mb-4">"Limbach Heir isn't just a saloon; it's an experience. The atmosphere is refined and the service is always impeccable."</p>
+                        <p class="font-semibold text-off-white">— Julian K., Long-Term Patron</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-accent-gold/50">
+
+        <section id="gallery" class="py-20 md:py-32 container mx-auto px-4 sm:px-6 lg:px-8 animate-on-scroll">
+            <h3 class="text-4xl md:text-6xl font-heading font-bold text-center mb-6 text-accent-gold">Gallery of Distinction</h3>
+            <p class="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">Browse a selection of our recent work across all styles and hair types for both our discerning clientele.</p>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <div class="lg:w-1/2">
+                    <h4 class="text-3xl font-heading font-bold mb-8 border-b-2 border-highlight-gold pb-2 text-off-white">The Men's Vault</h4>
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/222/ffd700?text=EXECUTIVE+HIGH+FADE" alt="Men's high taper fade with structured top" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/222/ffd700?text=High+Fade';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Precision Fade</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/222/ffd700?text=SCULPTED+POMPADOUR" alt="Classic pompadour hairstyle" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/222/ffd700?text=Sculpted+Pomp';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Volume Pomp</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/222/ffd700?text=MODERN+TEXTURED+QUIFF" alt="Modern textured quiff style" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/222/ffd700?text=Textured+Quiff';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Contemporary Quiff</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/222/ffd700?text=LONG+HAIR+GROOMING" alt="Grooming for long male hair" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/222/ffd700?text=Natural+Flow';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Natural Flow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 mt-12 lg:mt-0">
+                    <h4 class="text-3xl font-heading font-bold mb-8 border-b-2 border-highlight-gold pb-2 text-off-white">The Ladies' Collection</h4>
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/444/ffd700?text=DIMENSIONAL+BLONDE" alt="Dimensional blonde balayage" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/444/ffd700?text=Lived-in+Blonde';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Lived-in Blonde</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/444/ffd700?text=SLEEK+GEOMETRIC+LOB" alt="Sleek long bob (LOB) haircut" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/444/ffd700?text=Geometric+LOB';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Geometric LOB</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/444/ffd700?text=ELEGANT+BRIDAL+UPDO" alt="Intricate braided updo" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/444/ffd700?text=Formal+Upstyle';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Formal Upstyle</p>
+                            </div>
+                        </div>
+                        <div class="relative group rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-highlight-gold/50">
+                            <img src="https://placehold.co/600x800/444/ffd700?text=RICH+BRUNETTE+LAYERS" alt="Long hair with rich brunette color and layers" class="w-full h-full object-cover aspect-[3/4] transition duration-500 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x800/444/ffd700?text=Healthy+Movement';">
+                            <div class="absolute inset-0 bg-primary-dark/60 flex items-end p-3 sm:p-5 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p class="text-xs sm:text-sm font-bold text-highlight-gold border-b border-highlight-gold/50">Healthy Movement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-t border-accent-gold/50">
+        
+        <section class="bg-accent-gold py-16 animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-primary-dark text-center">
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 md:mb-0">
+                    Ready for an Elevated Experience?
+                </h3>
+                <a href="#booking" class="bg-primary-dark text-highlight-gold px-8 py-3 rounded-full font-bold uppercase transition duration-300 transform hover:bg-gray-800 hover:scale-[1.05] shadow-lg text-sm sm:text-base" aria-label="Schedule Your Consultation">
+                    Schedule Your Consultation
+                </a>
+            </div>
+        </section>
+
+        <section id="booking" class="py-20 md:py-32 bg-primary-dark animate-on-scroll">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-4xl md:text-6xl font-heading font-bold text-center mb-12 text-accent-gold">Connect With Us</h3>
+                
+                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 bg-secondary-dark p-8 md:p-12 rounded-3xl shadow-2xl shadow-accent-gold/20 border-t-2 border-accent-gold">
+                    
+                    <div class="lg:col-span-1 space-y-8 text-center lg:text-left">
+                        <h4 class="text-3xl font-heading font-bold text-highlight-gold border-b border-gray-700 pb-3">Our Doors</h4>
+                        
+                        <div class="space-y-6">
+                            <p class="text-gray-300 flex flex-col items-center lg:items-start">
+                                <span class="flex items-center text-accent-gold mb-1">
+                                    <svg class="w-6 h-6 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    Location:
+                                </span>
+                                789 Grand Royal Blvd, Suite 101, Metropolis, CA 90210
+                            </p>
+                            <p class="text-gray-300 flex flex-col items-center lg:items-start">
+                                <span class="flex items-center text-accent-gold mb-1">
+                                    <svg class="w-6 h-6 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.426 5.426l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    Contact:
+                                </span>
+                                (555) 123-4567 | style@limbachheir.com
+                            </p>
+                            <div class="pt-2">
+                                <h5 class="font-semibold text-highlight-gold mb-1">Hours:</h5>
+                                <p class="text-gray-400">Tue - Fri: 10AM - 7PM</p>
+                                <p class="text-gray-400">Sat: 9AM - 5PM (Strictly by appointment)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-2">
+                        <h4 class="text-3xl font-heading font-bold text-highlight-gold text-center lg:text-left border-b border-gray-700 pb-3 mb-6">Online Inquiry</h4>
+                        <form onsubmit="event.preventDefault(); showConfirmation();" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 text-off-white focus:border-highlight-gold focus:ring focus:ring-highlight-gold/50 shadow-inner" required aria-label="Full Name">
+                                <input type="tel" placeholder="Phone Number" class="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 text-off-white focus:border-highlight-gold focus:ring focus:ring-highlight-gold/50 shadow-inner" required aria-label="Phone Number">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 text-off-white focus:border-highlight-gold focus:ring focus:ring-highlight-gold/50 shadow-inner" required aria-label="Email Address">
+                            </div>
+                            <div>
+                                <textarea placeholder="Describe your desired service (e.g., Balayage & Cut, Executive Shave)" rows="5" class="w-full p-4 rounded-xl bg-gray-900 border border-gray-700 text-off-white focus:border-highlight-gold focus:ring focus:ring-highlight-gold/50 shadow-inner" required aria-label="Service Description"></textarea>
+                            </div>
+                            <button type="submit" class="shimmer-button w-full text-primary-dark font-bold text-lg py-4 rounded-xl uppercase tracking-wider transition duration-300 transform hover:scale-[1.01] shadow-xl">
+                                Submit Request
+                            </button>
+                            <p id="confirmation-message" class="text-center text-highlight-gold font-semibold mt-4 hidden">Thank you! Your request has been submitted. We will be in touch shortly.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-dark py-10 border-t-4 border-accent-gold">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <h5 class="text-2xl font-heading font-bold text-accent-gold mb-3">LIMBACH HEIR SALOON</h5>
+            <p class="mb-4 text-sm">&copy; 2024. All rights reserved. | Elevating Grooming to an Art Form.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-highlight-gold transition duration-300" aria-label="Follow us on Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.25.148 4.773 1.97 4.975 4.975.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.25-1.97 4.773-4.975 4.975-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.25-.148-4.773-1.97-4.975-4.975-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.25 1.97-4.773 4.975-4.975 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.668.014-4.944.072-3.332.16-5.337 2.165-5.495 5.495-.058 1.277-.072 1.686-.072 4.944s.014 3.668.072 4.944c.16 3.332 2.165 5.337 5.495 5.495 1.277.058 1.686.072 4.944.072s3.668-.014 4.944-.072c3.332-.16 2.165-5.337 5.495-5.495 1.277-.058 1.686-.072 4.944-.072zm0 5.869c-3.259 0-3.668.014-4.944.072-3.332.16-5.337 2.165-5.495 5.495-.058 1.277-.072 1.686-.072 4.944s.014 3.668.072 4.944c.16 3.332 2.165 5.337 5.495 5.495 1.277.058 1.686.072 4.944.072s3.668-.014 4.944-.072c3.332-.16 2.165-5.337 5.495-5.495 1.277-.058 1.686-.072 4.944-.072zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm6.406-11.845c-.443 0-.806.363-.806.806s.363.806.806.806c.443 0 .806-.363.806-.806s-.363-.806-.806-.806z"></path></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-highlight-gold transition duration-300" aria-label="Follow us on Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 .68-2.67.68-.68 1.57-.33 2.17-.33H19V2h-3.5c-1.95 0-3.35 1.1-4.14 2.8-.79 1.7-.86 3.9-.86 6.2v2.5H7.5v4H10V22h4v-8.5z"></path></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-highlight-gold transition duration-300" aria-label="Check us out on Yelp">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.88 15.65h-3.76l-1.42 4.35 1.42-.51 1.42 4.35 1.42-.51-1.42 4.35 3.76-11.45zm-1.88-5.65c-2.13 0-3.85-1.72-3.85-3.85s1.72-3.85 3.85-3.85 3.85 1.72 3.85 3.85-1.72 3.85-3.85 3.85z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        
+        // Also close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // --- Confirmation Message for Form ---
+        function showConfirmation() {
+            // In a real application, AJAX request would go here
+            document.getElementById('confirmation-message').classList.remove('hidden');
+            // Optional: clear the form after submission
+            document.querySelector('#booking form').reset();
+        }
+
+        // --- Scroll Animation Observer (Performance/Style) ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-scroll-animation');
+                    // Stop observing once it has been animated once
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1 // Triggers when 10% of the element is visible
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
