@@ -5,45 +5,89 @@
  * ---------------------------------------------------------------- */
 
 /* ==============================
+ * 0. Theme Variable Definitions
+ * ============================== */
+
+/* Define base variables. Default to Dark Theme (assuming no class is applied) */
+:root {
+    /* Main Background & Text */
+    --theme-bg: #0f0f0f; /* Primary Dark Background */
+    --theme-text: rgba(245, 245, 245, 1); /* Off-White Text */
+    
+    /* Accent Colors (Yellow/Gold) */
+    --accent: #FFC300; /* Bright Yellow Accent */
+    --highlight: #FFC300; 
+
+    /* Input & UI Neutrals */
+    --input-bg: #333333;
+    --input-border: #4a4a4a;
+    --placeholder-color: #888888;
+    
+    /* Overlays */
+    --overlay-shadow: rgba(0, 0, 0, 0.45); 
+}
+
+/* Light Theme Overrides */
+.light-theme {
+    /* Main Background & Text Inversion */
+    --theme-bg: #ffffff;
+    --theme-text: #1a1a1a;
+    
+    /* Accent colors remain consistent but might need slight adjustment for contrast on white */
+    --accent: #E5A000; /* Slightly deeper yellow for contrast */
+    --highlight: #FFC300; 
+
+    /* Input & UI Neutrals Inversion */
+    --input-bg: #f5f5f5;
+    --input-border: #cccccc;
+    --placeholder-color: #a0a0a0;
+    
+    /* Overlays (White overlay for readability over dark background images) */
+    --overlay-shadow: rgba(255, 255, 255, 0.5); 
+}
+
+
+/* ==============================
  * 1. Theme-Specific Styling
  * ============================== */
 
 /* Custom Hero Background (Placeholder Image) */
 .hero-bg {
-    /* Using a placeholder URL with colors matching the theme variables (bright yellow #FFC300) */
+    /* The placeholder image itself does not change, but the overlay adapts */
     background-image: url('https://placehold.co/1920x1080/1a1a1a/FFC300?text=LUXURY+SALON+INTERIOR');
     background-size: cover;
     background-position: center;
     position: relative;
-    /* Dark overlay for text readability */
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.45); 
+    /* Dark/Light overlay for text readability, now using theme variable */
+    box-shadow: inset 0 0 0 2000px var(--overlay-shadow); 
 }
 
 /* Text Shadow for Main Titles (using defined Yellow variable for consistency) */
 .text-shadow-gold {
-    /* Uses the theme variable for the primary glow color */
-    text-shadow: 0 0 8px var(--highlight-gold), 
+    /* Uses the accent variable for the primary glow color */
+    text-shadow: 0 0 8px var(--highlight), 
                  0 0 15px rgba(255, 195, 0, 0.5); /* Faded glow derived from expected yellow (#FFC300) */
 }
 
-/* Form Input Styling for Dark Theme */
+/* Form Input Styling (Adapted for both themes) */
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid #4a4a4a; /* Specific dark gray border */
+    /* Uses theme variables for background and border */
+    border: 1px solid var(--input-border); 
     border-radius: 0.75rem; 
-    background-color: #333333; /* Specific dark input background */
-    color: var(--off-white);
+    background-color: var(--input-bg); 
+    color: var(--theme-text);
     transition: all 0.3s ease;
 }
 .form-input:focus {
     outline: none;
-    /* Uses the theme variable for the accent color */
-    border-color: var(--accent-gold); 
-    box-shadow: 0 0 0 2px var(--accent-gold); /* Yellow focus ring */
+    /* Uses the accent variable for the focus ring */
+    border-color: var(--accent); 
+    box-shadow: 0 0 0 2px var(--accent); 
 }
 .form-input::placeholder {
-    color: #888888; /* Specific neutral placeholder text color */
+    color: var(--placeholder-color); 
 }
 
 /* ==============================
@@ -62,11 +106,10 @@
 
 /* Shimmer Button Style (CTA) */
 .shimmer-button {
-    /* Base colors from CSS variables (now yellow) */
-    background-color: var(--accent-gold); 
-    /* EDITED: Changed color to a light off-white (rgba) as requested. 
-       WARNING: This will result in very low contrast against the bright yellow background. */
-    color: rgba(245, 245, 245, 1); 
+    /* Base colors from theme variables */
+    background-color: var(--accent); 
+    /* Button text is set to the light theme text color */
+    color: var(--theme-text); 
     position: relative;
     overflow: hidden;
     z-index: 10;
