@@ -1,48 +1,118 @@
-/* Custom scrollbar matching the gold theme */
-        body::-webkit-scrollbar {
-            width: 8px;
-        }
-        body::-webkit-scrollbar-thumb {
-            background-color: #b8860b;
-            border-radius: 4px;
-        }
-        body::-webkit-scrollbar-track {
-            background-color: #0d0d0d;
-        }
+/* ----------------------------------------------------------------
+ * Custom CSS Definitions
+ * These styles define specific visual effects and animations
+ * that extend the base Tailwind utility classes for the Bright Yellow/Dark theme.
+ * ---------------------------------------------------------------- */
 
-        /* Dramatic shadow for gold text and elements */
-        .text-shadow-gold {
-            text-shadow: 0 0 10px rgba(184, 134, 11, 0.9), 0 0 5px rgba(255, 215, 0, 0.5);
-        }
+/* ==============================
+ * 1. Theme-Specific Styling
+ * ============================== */
 
-        /* Hero Image with heavy dark overlay for high contrast */
-        .hero-bg {
-            /* NOTE: Replace placeholder image with a high-res, branded image */
-            background-image: linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.7)),
-                                url('https://placehold.co/1920x1080/1a1a1a/b8860b?text=LUXURY+SALON+INTERIOR');
-            background-size: cover;
-            background-position: center;
-        }
+/* Custom Hero Background (Placeholder Image) */
+.hero-bg {
+    /* Using a placeholder URL with colors matching the theme variables (bright yellow #FFC300) */
+    background-image: url('https://placehold.co/1920x1080/1a1a1a/FFC300?text=LUXURY+SALON+INTERIOR');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Dark overlay for text readability */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.45); 
+}
 
-        /* Shimmer effect for the luxury button */
-        .shimmer-button {
-            background: linear-gradient(90deg, #b8860b 0%, #ffd700 50%, #b8860b 100%);
-            background-size: 200% 100%;
-            transition: all 0.5s ease;
-        }
-        .shimmer-button:hover {
-             animation: shimmer 1s infinite linear;
-        }
-        
-        /* Initial state for scroll animation */
-        .animate-on-scroll {
-            transition: opacity 1000ms ease-out, transform 1000ms ease-out;
-            opacity: 0;
-            transform: translateY(30px);
-        }
+/* Text Shadow for Main Titles (using defined Yellow variable for consistency) */
+.text-shadow-gold {
+    /* Uses the theme variable for the primary glow color */
+    text-shadow: 0 0 8px var(--highlight-gold), 
+                 0 0 15px rgba(255, 195, 0, 0.5); /* Faded glow derived from expected yellow (#FFC300) */
+}
 
-        /* Final state when element is visible */
-        .animate-on-scroll.active-scroll-animation {
-            opacity: 1;
-            transform: translateY(0);
-        }
+/* Form Input Styling for Dark Theme */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #4a4a4a; /* Specific dark gray border */
+    border-radius: 0.75rem; 
+    background-color: #333333; /* Specific dark input background */
+    color: var(--off-white);
+    transition: all 0.3s ease;
+}
+.form-input:focus {
+    outline: none;
+    /* Uses the theme variable for the accent color */
+    border-color: var(--accent-gold); 
+    box-shadow: 0 0 0 2px var(--accent-gold); /* Yellow focus ring */
+}
+.form-input::placeholder {
+    color: #888888; /* Specific neutral placeholder text color */
+}
+
+/* ==============================
+ * 2. Animations and Effects
+ * ============================== */
+
+/* Keyframes for the Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Shimmer Button Style (CTA) */
+.shimmer-button {
+    /* Base colors from CSS variables (now yellow) */
+    background-color: var(--accent-gold); 
+    /* EDITED: Changed color to a light off-white (rgba) as requested. 
+       WARNING: This will result in very low contrast against the bright yellow background. */
+    color: rgba(245, 245, 245, 1); 
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.shimmer-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient using RGBA white for the reflective shimmer effect */
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.4) 35%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0.4) 65%, 
+        transparent 100%
+    );
+    background-size: 200% 100%; 
+    pointer-events: none; 
+}
+
+.shimmer-button:hover::after {
+    /* Apply the movement animation only on hover */
+    animation: shimmer 1.5s infinite linear;
+}
+
+
+/* ==============================
+ * 3. Scroll Animation
+ * ============================== */
+
+/* Scroll Animation Styles (initial state before animation) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px); 
+    /* Smoother transition timing function */
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
